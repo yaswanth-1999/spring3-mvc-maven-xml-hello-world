@@ -52,13 +52,12 @@
     </dependencies>
 
     <!-- ===================== -->
-    <!-- Build Configuration -->
+    <!-- Build -->
     <!-- ===================== -->
     <build>
-
         <plugins>
 
-            <!-- Maven Compiler Plugin -->
+            <!-- Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -66,25 +65,27 @@
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
-                    <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
 
-            <!-- Jetty Plugin (for local testing only) -->
+            <!-- WAR Plugin (CRITICAL FIX) -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.4.0</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+
+            <!-- Jetty (optional, local testing) -->
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>9.4.54.v20240208</version>
-                <configuration>
-                    <scanIntervalSeconds>10</scanIntervalSeconds>
-                    <webApp>
-                        <contextPath>/spring3</contextPath>
-                    </webApp>
-                </configuration>
             </plugin>
 
         </plugins>
-
     </build>
 
 </project>
