@@ -55,13 +55,14 @@
     <!-- Build -->
     <!-- ===================== -->
     <build>
-        <plugins>
-            <!-- Sonar Maven Plugin -->
-            <plugin>
-                <groupId>org.sonarsource.scanner.maven</groupId>
-                <artifactId>sonar-maven-plugin</artifactId>
-                <version>3.11.1.2311</version>
-            </plugin>
+    <plugins>
+        <plugin>
+            <groupId>org.sonarsource.scanner.maven</groupId>
+            <artifactId>sonar-maven-plugin</artifactId>
+            <version>3.11.1.2311</version>
+        </plugin>
+    </plugins>
+</build>
 
             <!-- WAR Plugin -->
             <plugin>
