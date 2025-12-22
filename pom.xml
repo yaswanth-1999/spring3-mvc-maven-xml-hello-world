@@ -55,16 +55,15 @@
     <!-- Build -->
     <!-- ===================== -->
     <build>
-    <plugins>
-        <plugin>
-            <groupId>org.sonarsource.scanner.maven</groupId>
-            <artifactId>sonar-maven-plugin</artifactId>
-            <version>3.11.1.2311</version> <!-- Use latest stable version -->
-        </plugin>
-    </plugins>
-</build>
+        <plugins>
+            <!-- Sonar Maven Plugin -->
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.11.1.2311</version>
+            </plugin>
 
-            <!-- WAR Plugin (CRITICAL FIX) -->
+            <!-- WAR Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -74,13 +73,23 @@
                 </configuration>
             </plugin>
 
-            <!-- Jetty (optional, local testing) -->
+            <!-- Jetty Plugin (optional) -->
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>9.4.54.v20240208</version>
             </plugin>
 
+            <!-- Maven Compiler Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
