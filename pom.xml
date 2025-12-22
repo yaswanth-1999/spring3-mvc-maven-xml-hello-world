@@ -26,7 +26,6 @@
     <!-- Dependencies -->
     <!-- ===================== -->
     <dependencies>
-
         <!-- Spring MVC -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -48,21 +47,19 @@
             <version>3.1.0</version>
             <scope>provided</scope>
         </dependency>
-
     </dependencies>
 
     <!-- ===================== -->
     <!-- Build -->
     <!-- ===================== -->
     <build>
-    <plugins>
-        <plugin>
-            <groupId>org.sonarsource.scanner.maven</groupId>
-            <artifactId>sonar-maven-plugin</artifactId>
-            <version>3.11.1.2311</version>
-        </plugin>
-    </plugins>
-</build>
+        <plugins>
+            <!-- Sonar Maven Plugin -->
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.11.1.2311</version>
+            </plugin>
 
             <!-- WAR Plugin -->
             <plugin>
@@ -95,3 +92,4 @@
     </build>
 
 </project>
+
